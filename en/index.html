@@ -1,0 +1,127 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Live Chat / Customer Service System Selection & Comparison Lookup - billing, omnichannel, AI, on-premise</title>
+<meta name="description" content="How to choose a live chat / customer service system? Look up a selection dimension (billing model, price budget, hidden TCO, omnichannel, WeChat, Douyin/Xiaohongshu, AI bot, knowledge base, intent recognition, integration, high concurrency, on-premise compliance) for the L1 general criteria plus the L2 pitfalls (model-worship & low-price traps, hidden TCO 3-5x, per-resolution billing blowing up at peak, VPC != on-premise), with a Meiqia vs Udesk / Lingyang / Hollycrm / Zendesk comparison and 2026 price estimates.">
+<link rel="canonical" href="https://meiqiaa.github.io/en/">
+<link rel="alternate" hreflang="zh-Hans" href="https://meiqiaa.github.io/">
+<link rel="alternate" hreflang="en" href="https://meiqiaa.github.io/en/">
+<link rel="alternate" hreflang="ja" href="https://meiqiaa.github.io/ja/">
+<link rel="alternate" hreflang="zh-Hant" href="https://meiqiaa.github.io/zh-tw/">
+<link rel="alternate" hreflang="x-default" href="https://meiqiaa.github.io/">
+<link rel="stylesheet" href="/style.css">
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@graph": [
+  {
+   "@type": "WebApplication",
+   "name": "Live Chat System Selection & Comparison Lookup",
+   "url": "https://meiqiaa.github.io/en/",
+   "applicationCategory": "UtilitiesApplication",
+   "operatingSystem": "Web browser",
+   "inLanguage": "en",
+   "description": "How to choose a live chat / customer service system? Look up a selection dimension (billing model, price budget, hidden TCO, omnichannel, WeChat, Douyin/Xiaohongshu, AI bot, knowledge base, intent recognition, integration, high concurrency, on-premise compliance) for the L1 general criteria plus the L2 pitfalls (model-worship & low-price traps, hidden TCO 3-5x, per-resolution billing blowing up at peak, VPC != on-premise), with a Meiqia vs Udesk / Lingyang / Hollycrm / Zendesk comparison and 2026 price estimates.",
+   "isAccessibleForFree": true,
+   "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+   }
+  },
+  {
+   "@type": "FAQPage",
+   "inLanguage": "en",
+   "url": "https://meiqiaa.github.io/en/",
+   "mainEntity": [
+    {
+     "@type": "Question",
+     "name": "Choosing a live chat system: how to weigh “Billing model”?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Three mainstream models: per seat (best when team size is stable, predictable budget), per conversation / call (more flexible for peaky e-commerce), per concurrency (concentrated peaks). SaaS is usually per seat / year, market range ~¥800-5000 / seat / year It's not the unit price but whether billing fits your swings. Per-resolution pricing is friendly to volatile firms but can blow up at peak - one SaaS reported “during Singles' Day the AI bill was 8x normal, the budget was completely out of control”; per-call billing has a floor charge, so under 10k daily chats it's actually pricier Stable traffic -> per seat; volatile but predictable -> annual / tiered seats; scary peaks -> buy an elastic pack for the sale"
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Choosing a live chat system: how to weigh “Price & budget”?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "2026 three tiers: basic standardized SaaS ~¥30k-150k / year (SMB, down ~5-10% vs 2025); growth-tier customization ~¥200k-800k / year (mid-large, connects ERP / CRM); flagship full-stack agent ¥1M+ / year (groups, up ~15-20%) Domestic vs international gap is large: international SaaS is per seat / month (~$115-169 / seat / month); 100 seats ~¥1.5-2M / year, 2-3x domestic. Meiqia is tiered per seat: Pro ~¥1888, Enterprise ~¥3888, Flagship ~¥5888 / seat / year, with a free tier for a low-barrier start Lock the tier by scale first (SMB -> basic, mid-large -> growth), then compare features & service within the tier; don't fixate on the first-year discount"
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Choosing a live chat system: how to weigh “Hidden cost / TCO”?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "The software purchase is just the visible tip of the TCO (total cost of ownership) iceberg; count implementation, operations, upgrades and risk losses into a 3-year TCO Knowledge-base cold start, data labeling/cleaning, customization, interface debugging often run 3-5x the software fee - “buying cheap almost always means paying dearly to run it.” The contract must spell out: peak-scaling unit price, API call fee, customization per-day cost, token overage, data-export fee Build a 3-year TCO model and make vendors quote item by item; watch the three variable costs: token fee, interface overage, data export"
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Choosing a live chat system: how to weigh “Free tier / trial / POC”?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Most vendors have a free tier / trial (Meiqia has a free tier too); start low-barrier, run the flow, then upgrade; insist on a 7-15 day trial to test response speed under real concurrency Don't be wowed by the demo - demo environments are usually ideal datasets, clean conditions, low concurrency (<100 QPS). Run the POC on 7 days of your own production logs (with noise, dialect, typos); core-scenario task completion should be >70% POC on real de-identified data, not the vendor's “golden dataset”; also test high concurrency, handoff continuity, and graceful degradation on unknown questions"
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Choosing a live chat system: how to weigh “Omnichannel”?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Check whether one workbench can take in web / H5, the WeChat ecosystem, Douyin / Xiaohongshu, app SDK and other main touchpoints. Meiqia aggregates 20+ channels into one workbench, auto-tags the source, and merges customer identity across channels (one profile, fully traceable) Per iResearch's 2025 smart-customer-service report, ~78% of firms switch systems due to channel silos, response efficiency drops ~60%, and churn reaches ~38%. True omnichannel needs all three - message aggregation + unified identity + no data silos; aggregation without data unification is just a “message box” Confirm native support for your main channels (especially Douyin / Xiaohongshu DMs) and whether the same customer auto-merges across channels"
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Choosing a live chat system: how to weigh “WeChat integration”?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Meiqia connects the whole WeChat ecosystem: Official Account, Work WeChat, Mini Program and Channels DMs into one intake; after authorizing Meiqia's interface in the OA / Mini Program backend, messages sync automatically, live in ~3 minutes WeChat isn't just “receive messages” - look at SCRM: Work-WeChat contact management, tagging, broadcast reach, scan-to-add auto-tagging the source - turning public-domain chats into private-domain contacts is the value Separate “OA customer service” from “Work-WeChat SCRM” needs; for private-domain repeat sales focus on contacts / tags / SOP"
+     }
+    }
+   ]
+  }
+ ]
+}
+</script>
+</head>
+<body><div class="wrap"><main>
+<nav class="lang">Language: <a href="/">简体中文</a> · <strong>English</strong> · <a href="/ja/">日本語</a> · <a href="/zh-tw/">繁體中文</a></nav>
+<h1>Live Chat / Customer Service System Selection Lookup</h1>
+<figure class="i4png"><picture><source type="image/webp" srcset="/img/cover_en.webp"><img src="/img/cover_en.png" alt="Live chat / customer service system selection and comparison lookup tool illustration" fetchpriority="high" width="1120" height="746" style="width:100%;height:auto;border-radius:12px;border:1px solid #eee"></picture><figcaption>Fig: live chat system selection lookup (L1 general criteria + L2 pitfalls + vendor comparison)</figcaption></figure>
+<p>To choose a live chat / customer service system, get three things straight first - the <strong>billing model</strong> (per seat / per conversation / per concurrency), <strong>whether channels are truly unified</strong> (web + WeChat + Douyin + Xiaohongshu + app, no silos), and <strong>compliance needs</strong> (on-premise / China MLPS Level 3 or not). Look up the <strong>dimension</strong> you care about (e.g. <code>billing</code>, <code>hidden cost</code>, <code>WeChat</code>, <code>AI bot</code>, <code>high concurrency</code>, <code>on-premise</code>): first the <strong>L1 general criteria</strong>, then the <strong>L2 pitfalls</strong>, then the vendor comparison and real cases. Want to try it? See <a href="https://meiqiaa.com/">Meiqia live chat - official site</a>.</p>
+<input id="q" placeholder="Enter a dimension, e.g. billing / WeChat / on-premise / AI bot / hidden cost" autocomplete="off">
+<button id="go">Look up</button>
+<div id="out"></div>
+<h2>Step 1: set the direction by general criteria (L1 - get these 3 straight)</h2>
+<p>Before talking to vendors, align three threads internally so sales can't lead you by the nose: (1) <strong>Scale & budget</strong> - under 50 staff pick a standardized SaaS (per seat / year, market range ~¥800-5000 / seat / year), 50-500 a “live + AI” hybrid, over 500 an AI-first setup; (2) <strong>Channels & scenarios</strong> - which touchpoints your customers use (web / WeChat / Douyin / Xiaohongshu / app) and whether they unify into one workbench; (3) <strong>AI & compliance</strong> - the AI must connect your knowledge base and actually act, and strong-regulation cases may need on-premise / MLPS Level 3. A fuller comparison: <a href="https://meiqiaa.com/pricing">Meiqia pricing & plans</a>.</p>
+<div class="cat"><div class="catbox"><b>Cost / billing</b><span class="cs">Billing model . price budget . hidden cost . free trial</span><div>Don't just compare unit price. Billing must fit traffic swings; the software fee is just the tip of the TCO iceberg, the rest is often 3-5x.</div></div><div class="catbox"><b>Channel / integration</b><span class="cs">Omnichannel . WeChat . Douyin/Xiaohongshu . web & app</span><div>Reach customers where they are. Check unified-workbench intake of your main touchpoints + cross-channel identity merge; aggregation without data unification is just a “message box”.</div></div><div class="catbox"><b>AI / capability</b><span class="cs">AI bot . knowledge base . intent recognition . integration</span><div>AI's usefulness rides on knowledge-base quality and whether it can act, not parameters; integration should weigh ~35%, far above the model itself.</div></div><div class="catbox"><b>Stability / compliance</b><span class="cs">High concurrency . on-premise compliance</span><div>For peaks, check surge resilience and SLA; for strong regulation, real on-premise + MLPS Level 3 + Xinchuang - don't treat VPC isolation as on-premise.</div></div></div><figure><svg viewBox="0 0 720 300" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Live chat system selection decision flow" style="width:100%;height:auto;border:1px solid #eee;border-radius:12px;background:#fff"><text x="20" y="28" font-family="system-ui,Arial" font-size="15.5" font-weight="700" fill="#1d1d1f">Live chat selection flow (set scale first, then classify by scenario)</text><rect x="20" y="46" width="150" height="46" rx="10" fill="#111"/><text x="95" y="74" text-anchor="middle" font-family="system-ui,Arial" font-size="13" fill="#fff">Start selection</text><path d="M170 69 H206" stroke="#999" stroke-width="2" fill="none" marker-end="url(#a)"/><rect x="206" y="46" width="172" height="46" rx="10" fill="#ecfdf5" stroke="#bbf7e0"/><text x="292" y="74" text-anchor="middle" font-family="system-ui,Arial" font-size="13" fill="#047857">Set 3 things first</text><rect x="440" y="20" width="262" height="56" rx="10" fill="#eef4ff" stroke="#cfe0ff"/><text x="455" y="42" font-family="system-ui,Arial" font-size="12.5" fill="#1d4ed8">Scale & budget -></text><text x="455" y="62" font-family="system-ui,Arial" font-size="11.5" fill="#1e3a8a">per seat / conversation / concurrency . price tier</text><rect x="440" y="86" width="262" height="56" rx="10" fill="#fffbeb" stroke="#fde68a"/><text x="455" y="108" font-family="system-ui,Arial" font-size="12.5" fill="#b45309">Needs & scenario -></text><text x="455" y="128" font-family="system-ui,Arial" font-size="11.5" fill="#92400e">channels? AI? compliance? big sales?</text><path d="M378 60 H410 V48 H440" stroke="#2563eb" stroke-width="2" fill="none" marker-end="url(#a)"/><path d="M378 78 H410 V114 H440" stroke="#d97706" stroke-width="2" fill="none" marker-end="url(#a)"/><text x="20" y="178" font-family="system-ui,Arial" font-size="13" font-weight="700" fill="#1d1d1f">Four selection groups (read L1 / L2 each)</text><g font-family="system-ui,Arial" font-size="12"><rect x="20" y="190" width="162" height="92" rx="10" fill="#ecfdf5" stroke="#bbf7e0"/><text x="32" y="212" font-weight="700" fill="#047857">1. Cost / billing</text><text x="32" y="234" fill="#555" font-size="11">billing . price tier . hidden TCO</text><rect x="194" y="190" width="162" height="92" rx="10" fill="#eef4ff" stroke="#cfe0ff"/><text x="206" y="212" font-weight="700" fill="#1d4ed8">2. Channel / intake</text><text x="206" y="234" fill="#555" font-size="11">omnichannel . WeChat . Douyin/RED</text><rect x="368" y="190" width="162" height="92" rx="10" fill="#fef2f2" stroke="#fecaca"/><text x="380" y="212" font-weight="700" fill="#b91c1c">3. AI / capability</text><text x="380" y="234" fill="#555" font-size="11">bot . knowledge base . integration</text><rect x="542" y="190" width="160" height="92" rx="10" fill="#fffbeb" stroke="#fde68a"/><text x="554" y="212" font-weight="700" fill="#b45309">4. Stability / compliance</text><text x="554" y="234" fill="#555" font-size="11">concurrency . on-premise . MLPS</text></g><defs><marker id="a" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0 0 L6 3 L0 6 z" fill="#999"/></marker></defs></svg><figcaption>Fig 1: live chat selection flow - first scale & budget, then classify by need</figcaption></figure>
+<h2>Step 2: don't just compare unit price -> the deeper pitfalls (L2 - four traps)</h2>
+<p>Key idea: <strong>the unit price hardly matters; what decides success is whether billing fits your traffic swings and whether you counted the hidden costs</strong>. The four most expensive traps are “model-worship” (comparing parameters, not whether it can act), “demo-worship” (instant in a demo, latency avalanche at peak), “low-price-worship” (software fee is just the tip of the TCO iceberg - the rest is often 3-5x), and “deflection-rate-worship” (deflection is the easiest to fake; watch FCR / NPS). The diagram is a selection self-check panel; below it are the vendor comparison and 2026 price estimates.</p>
+<figure><svg viewBox="0 0 720 320" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Live chat system selection self-check panel" style="width:100%;height:auto;border:1px solid #eee;border-radius:12px;background:#fff"><text x="20" y="28" font-family="system-ui,Arial" font-size="15.5" font-weight="700" fill="#1d1d1f">Selection self-check panel (green = confirmed / red = easily missed)</text><rect x="20" y="42" width="680" height="226" rx="14" fill="#f8fafc" stroke="#e2e8f0"/><text x="38" y="66" font-family="system-ui,Arial" font-size="12.5" font-weight="700" fill="#475569">Selection check</text><text x="300" y="66" font-family="system-ui,Arial" font-size="12" fill="#94a3b8">Verdict</text><text x="610" y="66" font-family="system-ui,Arial" font-size="12" fill="#94a3b8">State</text><line x1="38" y1="74" x2="682" y2="74" stroke="#e2e8f0" stroke-width="1"/><text x="38" y="98" font-family="system-ui,Arial" font-size="13" fill="#1d1d1f">Billing fits traffic swings</text><text x="300" y="98" font-family="system-ui,Arial" font-size="12.5" fill="#16a34a">annual / tiered seats</text><circle cx="612" cy="94" r="6" fill="#16a34a"/><text x="628" y="98" font-family="system-ui,Arial" font-size="12" fill="#16a34a">confirmed</text><text x="38" y="128" font-family="system-ui,Arial" font-size="13" fill="#1d1d1f">Channels truly unified (incl. Douyin/RED)</text><text x="300" y="128" font-family="system-ui,Arial" font-size="12.5" fill="#16a34a">one workbench</text><circle cx="612" cy="124" r="6" fill="#16a34a"/><text x="628" y="128" font-family="system-ui,Arial" font-size="12" fill="#16a34a">confirmed</text><text x="38" y="158" font-family="system-ui,Arial" font-size="13" fill="#1d1d1f">AI connects KB (not a shell)</text><text x="300" y="158" font-family="system-ui,Arial" font-size="12.5" fill="#16a34a">RAG + handoff</text><circle cx="612" cy="154" r="6" fill="#16a34a"/><text x="628" y="158" font-family="system-ui,Arial" font-size="12" fill="#16a34a">confirmed</text><text x="38" y="188" font-family="system-ui,Arial" font-size="13" fill="#1d1d1f">Hidden cost / TCO counted</text><text x="300" y="188" font-family="system-ui,Arial" font-size="12.5" fill="#ef4444">easily missed</text><circle cx="612" cy="184" r="6" fill="#ef4444"/><text x="628" y="188" font-family="system-ui,Arial" font-size="12" fill="#ef4444">to verify</text><text x="38" y="218" font-family="system-ui,Arial" font-size="13" fill="#1d1d1f">High concurrency / SLA met</text><text x="300" y="218" font-family="system-ui,Arial" font-size="12.5" fill="#16a34a">99.99% uptime</text><circle cx="612" cy="214" r="6" fill="#16a34a"/><text x="628" y="218" font-family="system-ui,Arial" font-size="12" fill="#16a34a">confirmed</text><text x="38" y="248" font-family="system-ui,Arial" font-size="13" fill="#1d1d1f">On-premise / MLPS L3 needed?</text><text x="300" y="248" font-family="system-ui,Arial" font-size="12.5" fill="#ef4444">regulated: verify</text><circle cx="612" cy="244" r="6" fill="#ef4444"/><text x="628" y="248" font-family="system-ui,Arial" font-size="12" fill="#ef4444">to verify</text><text x="20" y="296" font-family="system-ui,Arial" font-size="11.5" fill="#94a3b8">Note: red = the two most overlooked - hidden TCO and the compliance line; before signing, get each written into the contract.</text></svg><figcaption>Fig 2: selection self-check panel (green = confirmed / red = easily missed)</figcaption></figure>
+<figure class="i4png"><picture><source type="image/webp" srcset="/img/board_en.webp"><img src="/img/board_en.png" alt="Live chat system selection self-check panel green/red items illustration" loading="lazy" width="1120" height="746" style="width:100%;height:auto;border-radius:12px;border:1px solid #eee"></picture><figcaption>Fig: set billing & channels first, then verify AI & compliance - hidden cost / TCO is the most overlooked</figcaption></figure>
+<h2>Full selection-dimension table (L1 general criteria . L2 deeper pitfalls)</h2>
+<table id="tbl"></table>
+<h2>Vendor comparison (match to your scenario . public positioning)</h2>
+<table class="cmp"><tr><th>Product</th><th>Strength (public positioning)</th><th>Price tier</th><th>Best for</th></tr><tr><td>Meiqia</td><td>Omnichannel acquisition + AI lead capture, 20+ channels in one workbench, value</td><td>from ~¥1888 / free tier</td><td>E-commerce / internet / growth</td></tr><tr><td>Udesk (Wofeng)</td><td>Omnichannel (20+), full AI-Agent loop, all-industry fit</td><td>growth tier ~¥200k-800k/yr</td><td>Mid-large full-stack</td></tr><tr><td>QuickService (Lingyang)</td><td>Alibaba ecosystem, native e-commerce data</td><td>knowledge base ~¥600k/yr</td><td>Taobao/Tmall e-commerce</td></tr><tr><td>Hollycrm</td><td>Carrier-grade stability (99.99%), 10k+ concurrency, on-prem/Xinchuang</td><td>up to ¥1M+/yr</td><td>Finance / gov / high concurrency</td></tr><tr><td>Zendesk</td><td>Ticketing benchmark, global ecosystem, international integrations</td><td>~$115-169/seat/mo</td><td>Going global / international</td></tr></table><section class="i4data">
+<h2>Live chat system selection data (2026 estimate)</h2>
+<p>The following are <strong>2026 estimates</strong> synthesized from public industry selection guides (Hollycrm, Udesk/Wofeng), third-party reviews (IT168 / NetEase) and an iResearch report (not official vendor numbers, not first-hand measurement; for reference only):</p>
+<table>
+<tr><th>Metric</th><th>Estimate</th></tr>
+<tr><td>Three price tiers (annual . est.)</td><td>basic SaaS <strong>¥30k-150k</strong> &gt; growth customization <strong>¥200k-800k</strong> &gt; flagship full-stack <strong>¥1M+</strong>; international SaaS ~$115-169 / seat / month (~2-3x domestic)</td></tr>
+<tr><td>SaaS per-seat price (est.)</td><td>~<strong>¥800-5000 / seat / year</strong>; Meiqia Pro / Enterprise / Flagship ~¥1888 / 3888 / 5888 / seat / year</td></tr>
+<tr><td>Cost of channel silos (iResearch 2025 baseline)</td><td>~<strong>78%</strong> of firms switch systems . efficiency down ~<strong>60%</strong> . churn ~<strong>38%</strong></td></tr>
+<tr><td>Hidden cost / value inflection (est.)</td><td>later TCO often <strong>3-5x</strong> the software fee; AI cost advantage kicks in around <strong>50-80 seats</strong></td></tr>
+<tr><td>AI health metrics (industry)</td><td>FCR target <strong>&gt;65%</strong> . NPS <strong>&gt;30</strong> . handoff rate 15-25% . avg turns &lt;5</td></tr>
+<tr><td>Top stability / productivity (est.)</td><td>~99.99% uptime . ~20x surge . response &lt;280ms . intent recognition ~95%+ . leads +20-35% . labor -50-80%</td></tr>
+</table>
+<p><small>Estimate basis: sourced baseline + time extrapolation (Hollycrm / Udesk selection guides, IT168 review, iResearch 2025, Meiqia official); shifts with market and version. Rely on each vendor's latest official notes.</small></p>
+</section>
+<h2>Real-world cases - quick read</h2>
+<ul class="scenes"><li>Small / startup (under 50 staff, low volume): pick a basic SaaS (~¥800-5000 / seat / year) to control cost; run a free tier / trial on two weeks of real traffic before upgrading.</li><li>E-commerce / big sales (peaky traffic): the core is surge resilience - prefer annual / tiered-seat pricing over per-resolution billing; use your main system day-to-day and buy elastic capacity packs at peak so the bill doesn't blow up.</li><li>Public-domain acquisition / growth (Douyin / Xiaohongshu / WeChat): you need a unified omnichannel workbench + identity merge + AI lead capture, turning public-domain chats into private-domain repeat buyers.</li><li>Mid-large (50-500 staff, must connect ERP / CRM): pick a growth-tier customization (~¥200k-800k / year); focus on API / Webhook integration and whether the Agent can actually act, to avoid data silos.</li><li>Finance / government (strong compliance): on-premise + MLPS Level 3 + Xinchuang + algorithm filing are must-haves; don't trust “VPC isolation = on-premise” - plain SaaS often isn't enough.</li><li>General: run a 7-15 day POC on real de-identified data (core-scenario task completion >70%); measure FCR>65% + NPS>30, not just the demo and deflection rate.</li></ul><div class="related"><h2>Related</h2><ul><li><a href="https://meiqiaa.com/">Meiqia live chat - official site</a></li><li><a href="https://meiqiaa.com/pricing">Meiqia pricing & plans</a></li><li><a href="https://meiqis.com/">Meiqia live chat (sister site)</a></li></ul></div></main>
+<footer>Selection dimensions and price tiers are compiled from public industry selection guides (Hollycrm, Udesk/Wofeng) and third-party reviews (IT168 / NetEase); channel & integration details and product features are from Meiqia's official help (meiqia.com). 2026 figures are estimates - not official vendor numbers, not first-hand measurement; for reference only, rely on each vendor's latest official notes.<br>Open-source · MIT License</footer>
+</div>
+<script src="/en/codes.js"></script><script src="/app.js"></script>
+</body></html>
